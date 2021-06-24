@@ -20,6 +20,7 @@ public class LineComparison {
         System.out.println("enter coordinate of end point of line2(x3,y3):");
         x3 = scanner.nextDouble();
         y3 = scanner.nextDouble();
+        scanner.close();
 
         dis1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         dis2 = Math.sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
@@ -30,7 +31,11 @@ public class LineComparison {
         if (dis1.equals(dis2)) {
             System.out.println("length of line1 and line2 are equal");
         } else {
-            System.out.println("length of line1 and line2 are not equal");
+            if (dis1 > dis2) {
+                System.out.println("length of line1 is greater than line2");
+            } else {
+                System.out.println("length of line1 is lesser than line2");
+            }
         }
     }
 }
